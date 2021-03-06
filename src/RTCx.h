@@ -93,7 +93,7 @@ public:
 	void init(void) const;
 	bool resetClock(void) const;
 
-	struct tm {
+/* 	struct tm {
 		int tm_sec; // Seconds [0..59]
 		int tm_min; // Minutes [0..59].
 		int tm_hour; // Hour [0..23].
@@ -103,6 +103,18 @@ public:
 		int tm_wday; // Day of week [0..6] (Sunday=0).
 		int tm_yday; // Day of year [0..365]. (-1=unset).
 		int tm_isdst; // Daylight Savings flag (ignored).
+	}; */
+	typedef	int8_t	byte;
+	struct tm {
+		byte tm_sec; // Seconds [0..59]
+		byte tm_min; // Minutes [0..59].
+		byte tm_hour; // Hour [0..23].
+		byte tm_mday; // Day of month [1..31].
+		byte tm_mon; // Month of year [0..11].
+		int	 tm_year; // Years since 1900.
+		byte tm_wday; // Day of week [0..6] (Sunday=0).
+		byte tm_yday; // Day of year [0..365]. (-1=unset).
+		byte tm_isdst; // Daylight Savings flag (ignored).
 	};
 
 	typedef int32_t time_t;
